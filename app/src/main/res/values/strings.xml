@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Registro</string>
+	
+	<string name="about">Sobre</string>
+	<string name="settings">Configurações</string>
+	
+	<string name="product_name">Nome do produto</string>
+	<string name="product_code">Código do produto</string>
+	
+	<string name="enter_the_product_name">Insira o nome do produto</string>
+	<string name="enter_the_product_code">Insira o código do produto</string>
+	
+	<string name="choose_your_session">Escolha a sua sessão</string>
+	
+	<string name="add">Adicionar</string>
+	<string name="update">Atualizar</string>
+	<string name="delete">Apagar</string>
+	<string name="you_this_connection_with_ethernet">Você esta conexão com ethernet</string>
+	<string name="please_check_your_internet_connection">Verifique a conexão com a sua Internet</string>
+	
+	<string name="email">E-mail</string>
+	<string name="password">Senha</string>
+	<string name="signin">Entrar</string>
+	<string name="minimum_password">Senha muito curta, digite no mínimo 8 caracteres!</string>
+    <string name="auth_failed">Falha na autenticação, verifique seu e-mail e senha</string>
+	
+	<!-- Colors Names-->
+	<string name="dark">Escuro</string>
+	<string name="red">Vermelho</string>
+	<string name="pink">Rosa</string>
+	<string name="purple">Roxo</string>
+	<string name="deepPurple">Roxo Profundo</string>
+	<string name="indigo">Indigo</string>
+	<string name="blue">Azul</string>
+	<string name="lightBlue">Azul Claro</string>
+	<string name="cyan">Ciano</string>
+	<string name="teal">Cerceta</string>
+	<string name="green">Verde</string>
+	<string name="lightGreen">Verde Claro</string>
+	<string name="lime">Lima</string>
+	<string name="yellow">Amarelo</string>
+	<string name="amber">Âmbar</string>
+	<string name="orange">Laranja</string>
+	<string name="deepOrange">Laranja Profundo</string>
+	<string name="brown">Marron</string>
+	<string name="grey">Cinza</string>
+	<string name="blueGrey">Cinza Azul</string>
+
+	<!-- Settings -->
+    <string name="def_theme">@string/dark</string>
+    <string name="settings_title">Temas</string>
+    <string name="settings_summary">Aparência</string>
+	<string name="settings_dialog_title">Temas</string>
+
+	<!-- About -->
+    <string name="about_app">Sobre o Registro</string>
+    <string name="developer">Desenvolvedor</string>
+    <string name="version">Versão</string>
+    <string name="version_number_unknown">Desconhecido</string>
+    <string name="mit_licence">MIT License</string>
+    <string name="special_thanks">Agradecimentos</string>
+    
+	<string name="developer_instagram_name" translatable="false">Vanderclin Rocha</string>
+	<string name="developer_instagram_name_tag">Instagram</string>
+	<string name="developer_instagram_url" translatable="false">https://www.instagram.com/vanderclin_rocha?r=nametag</string>
+	
+	<string name="developer_github_name" translatable="false">Vanderclin Rocha</string>
+    <string name="developer_github_name_tag">Github</string>
+    <string name="developer_github_url" translatable="false">https://github.com/Vanderclin</string>
+	
+
+</resources>

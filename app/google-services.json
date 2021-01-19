@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "833115491126",
+    "firebase_url": "https://registry-release-default-rtdb.firebaseio.com",
+    "project_id": "registry-release",
+    "storage_bucket": "registry-release.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833115491126:android:08db344922a34342494197",
+        "android_client_info": {
+          "package_name": "com.vanderclin.registry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833115491126-34np94udcscsraqg1buiksuq6ui220fc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM6QE3PlnfyRE097ePotdXsHd4Ll1QoQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833115491126-34np94udcscsraqg1buiksuq6ui220fc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

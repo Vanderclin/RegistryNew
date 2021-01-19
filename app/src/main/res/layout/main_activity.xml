@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:id="@+id/root_coordinator">
+
+	<ListView
+		android:id="@+id/listViewArtists"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scrollbars="none"
+		android:divider="@null"
+		android:dividerHeight="0dp"
+		android:padding="10dp">
+
+	</ListView>
+
+	<android.support.design.widget.FloatingActionButton
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:src="@drawable/ic_plus"
+		android:layout_gravity="bottom|right"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		app:rippleColor="?attr/itemColorDark"
+		app:backgroundTint="?attr/itemColorLight"
+		android:layout_margin="16dp"
+		android:clickable="true"
+		android:id="@+id/fab_add"
+		app:borderWidth="0dp"
+		app:fabSize="normal"
+		app:elevation="6dp"/>
+
+</android.support.design.widget.CoordinatorLayout>
+

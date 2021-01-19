@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- AlertDialog Style -->
+		
+	<style name="AlertDialog" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+		<item name="android:textColor">?attr/itemColorLight</item>
+		<item name="android:textColorPrimary">?attr/itemColorLight</item>
+		<item name="android:textStyle">bold</item>
+		<item name="colorAccent">?attr/itemColorLight</item>
+	</style>
+
+	<!-- CardView Style -->
+
+	<style name="CardViewStyle">
+        <item name="cardBackgroundColor">?attr/cardBackground</item>
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardPreventCornerOverlap">true</item>
+    </style>
+
+	<!-- Theme App Style -->
+
+	<style name="dark" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">#1F1F1F</item>
+		<item name="colorPrimaryDark">#1F1F1F</item>
+		<item name="itemColorLight">#1F1F1F</item>
+		<item name="itemColorDark">#121212</item>
+		<item name="cardBackground">#1F1F1F</item>
+		<item name="colorAccent">#FFFFFF</item>
+	</style>
+
+	<style name="red" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/red</item>
+		<item name="colorPrimaryDark">@color/redDark</item>
+		<item name="itemColorLight">@color/red</item>
+		<item name="itemColorDark">@color/redDark</item>
+		<item name="cardBackground">@color/red</item>
+		<item name="colorAccent">@color/red</item>
+	</style>
+
+	<style name="pink" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/pink</item>
+		<item name="colorPrimaryDark">@color/pinkDark</item>
+		<item name="itemColorLight">@color/pink</item>
+		<item name="itemColorDark">@color/pinkDark</item>
+		<item name="cardBackground">@color/pink</item>
+		<item name="colorAccent">@color/pink</item>
+	</style>
+
+	<style name="purple" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/purple</item>
+		<item name="colorPrimaryDark">@color/purpleDark</item>	
+		<item name="itemColorLight">@color/purple</item>
+		<item name="itemColorDark">@color/purpleDark</item>
+		<item name="cardBackground">@color/purple</item>
+		<item name="colorAccent">@color/purple</item>
+	</style>
+
+	<style name="deepPurple" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/deepPurple</item>
+		<item name="colorPrimaryDark">@color/deepPurpleDark</item>		
+		<item name="itemColorLight">@color/deepPurple</item>
+		<item name="itemColorDark">@color/deepPurpleDark</item>
+		<item name="cardBackground">@color/deepPurple</item>
+		<item name="colorAccent">@color/deepPurple</item>
+	</style>
+
+	<style name="indigo" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/indigo</item>
+		<item name="colorPrimaryDark">@color/indigoDark</item>		
+		<item name="itemColorLight">@color/indigo</item>
+		<item name="itemColorDark">@color/indigoDark</item>
+		<item name="cardBackground">@color/indigo</item>
+		<item name="colorAccent">@color/indigo</item>
+	</style>
+
+	<style name="blue" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/blue</item>
+		<item name="colorPrimaryDark">@color/blueDark</item>		
+		<item name="itemColorLight">@color/blue</item>
+		<item name="itemColorDark">@color/blueDark</item>
+		<item name="cardBackground">@color/blue</item>
+		<item name="colorAccent">@color/blue</item>
+	</style>
+
+	<style name="lightBlue" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/lightBlue</item>
+		<item name="colorPrimaryDark">@color/lightBlueDark</item>	
+		<item name="itemColorLight">@color/lightBlue</item>
+		<item name="itemColorDark">@color/lightBlueDark</item>
+		<item name="cardBackground">@color/lightBlue</item>
+		<item name="colorAccent">@color/lightBlue</item>
+	</style>
+
+	<style name="cyan" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/cyan</item>
+		<item name="colorPrimaryDark">@color/cyanDark</item>	
+		<item name="itemColorLight">@color/cyan</item>
+		<item name="itemColorDark">@color/cyanDark</item>
+		<item name="cardBackground">@color/cyan</item>
+		<item name="colorAccent">@color/cyan</item>
+	</style>
+
+	<style name="teal" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/teal</item>
+		<item name="colorPrimaryDark">@color/tealDark</item>	
+		<item name="itemColorLight">@color/teal</item>
+		<item name="itemColorDark">@color/tealDark</item>
+		<item name="cardBackground">@color/teal</item>
+		<item name="colorAccent">@color/teal</item>
+	</style>
+
+	<style name="green" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/green</item>
+		<item name="colorPrimaryDark">@color/greenDark</item>	
+		<item name="itemColorLight">@color/green</item>
+		<item name="itemColorDark">@color/greenDark</item>
+		<item name="cardBackground">@color/green</item>
+		<item name="colorAccent">@color/green</item>
+	</style>
+
+	<style name="lightGreen" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/lightGreen</item>
+		<item name="colorPrimaryDark">@color/lightGreenDark</item>		
+		<item name="itemColorLight">@color/lightGreen</item>
+		<item name="itemColorDark">@color/lightGreenDark</item>
+		<item name="cardBackground">@color/lightGreen</item>
+		<item name="colorAccent">@color/lightGreen</item>
+	</style>
+
+	<style name="lime" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/lime</item>
+		<item name="colorPrimaryDark">@color/limeDark</item>	
+		<item name="itemColorLight">@color/lime</item>
+		<item name="itemColorDark">@color/limeDark</item>
+		<item name="cardBackground">@color/lime</item>
+		<item name="colorAccent">@color/lime</item>
+	</style>
+
+	<style name="yellow" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/yellow</item>
+		<item name="colorPrimaryDark">@color/yellowDark</item>		
+		<item name="itemColorLight">@color/yellow</item>
+		<item name="itemColorDark">@color/yellowDark</item>
+		<item name="cardBackground">@color/yellow</item>
+		<item name="colorAccent">@color/yellow</item>
+	</style>
+
+	<style name="amber" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/amber</item>
+		<item name="colorPrimaryDark">@color/amberDark</item>		
+		<item name="itemColorLight">@color/amber</item>
+		<item name="itemColorDark">@color/amberDark</item>
+		<item name="cardBackground">@color/amber</item>
+		<item name="colorAccent">@color/amber</item>
+	</style>
+
+	<style name="orange" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/orange</item>
+		<item name="colorPrimaryDark">@color/orangeDark</item>		
+		<item name="itemColorLight">@color/orange</item>
+		<item name="itemColorDark">@color/orangeDark</item>
+		<item name="cardBackground">@color/orange</item>
+		<item name="colorAccent">@color/orange</item>
+	</style>
+
+	<style name="deepOrange" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/deepOrange</item>
+		<item name="colorPrimaryDark">@color/deepOrangeDark</item>		
+		<item name="itemColorLight">@color/deepOrange</item>
+		<item name="itemColorDark">@color/deepOrangeDark</item>
+		<item name="cardBackground">@color/deepOrange</item>
+		<item name="colorAccent">@color/deepOrange</item>
+	</style>
+
+	<style name="brown" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/brown</item>
+		<item name="colorPrimaryDark">@color/brownDark</item>	
+		<item name="itemColorLight">@color/brown</item>
+		<item name="itemColorDark">@color/brownDark</item>
+		<item name="cardBackground">@color/brown</item>
+		<item name="colorAccent">@color/brown</item>
+	</style>
+
+	<style name="grey" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/grey</item>
+		<item name="colorPrimaryDark">@color/greyDark</item>	
+		<item name="itemColorLight">@color/grey</item>
+		<item name="itemColorDark">@color/greyDark</item>
+		<item name="cardBackground">@color/grey</item>
+		<item name="colorAccent">@color/grey</item>
+	</style>
+
+	<style name="blueGrey" parent="@style/Theme.AppCompat">
+		<item name="colorPrimary">@color/blueGrey</item>
+		<item name="colorPrimaryDark">@color/blueGreyDark</item>	
+		<item name="itemColorLight">@color/blueGrey</item>
+		<item name="itemColorDark">@color/blueGreyDark</item>
+		<item name="cardBackground">@color/blueGrey</item>
+		<item name="colorAccent">@color/blueGrey</item>
+	</style>
+	
+</resources>

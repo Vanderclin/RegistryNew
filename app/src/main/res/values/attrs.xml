@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<attr name="cardBackground" format="color"/>
+	<attr name="itemColorLight" format="color"/>
+	<attr name="itemColorDark" format="color"/>
+	<attr name="itemStyle" format="boolean"/>
+
+</resources>
