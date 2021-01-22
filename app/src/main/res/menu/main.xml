@@ -4,11 +4,8 @@
     tools:context="com.vanderclin.registry.MainActivity" >
 
 	<item
-		android:id="@+id/search"
-		android:actionViewClass="android.widget.SearchView"
-		android:icon="@android:drawable/ic_menu_search"
-		android:showAsAction="always"
-		android:title="Pesquisa"/>
+		android:id="@+id/select_section"
+		android:title="@string/select_section"/>
 	
 	<item
         android:id="@+id/about"

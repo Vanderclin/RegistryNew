@@ -12,19 +12,25 @@
 	<string name="enter_the_product_name">Insira o nome do produto</string>
 	<string name="enter_the_product_code">Insira o código do produto</string>
 	
-	<string name="choose_your_session">Escolha a sua sessão</string>
+	<string name="choose_your_section">Escolha a sua seção</string>
+	<string name="select_section">Selecione a seção</string>
+	
+	
+	<string name="add_product">Adicionar Produto</string>
+	<string name="add_or_delete">Adicionar ou Excluir</string>
+	<string name="added_item">Item adicionado</string>
+	<string name="updated_item">Item atualizado</string>
+	<string name="deleted_item">Item excluído</string>
+	
+	
+	<string name="please_enter_a_name">Por favor, digite um nome</string>
+	<string name="please_enter_a_code">Por favor insira um código</string>
 	
 	<string name="add">Adicionar</string>
 	<string name="update">Atualizar</string>
 	<string name="delete">Apagar</string>
 	<string name="you_this_connection_with_ethernet">Você esta conexão com ethernet</string>
 	<string name="please_check_your_internet_connection">Verifique a conexão com a sua Internet</string>
-	
-	<string name="email">E-mail</string>
-	<string name="password">Senha</string>
-	<string name="signin">Entrar</string>
-	<string name="minimum_password">Senha muito curta, digite no mínimo 8 caracteres!</string>
-    <string name="auth_failed">Falha na autenticação, verifique seu e-mail e senha</string>
 	
 	<!-- Colors Names-->
 	<string name="dark">Escuro</string>

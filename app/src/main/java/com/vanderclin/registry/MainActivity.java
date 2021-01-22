@@ -20,15 +20,15 @@ public class MainActivity extends AppCompatActivity
 	private int SETTINGS_ACTION = 1;
     private EditText editTextName;
 	private EditText editTextCode;
-    private ListView listViewArtists;
+    private ListView listViewProducts;
 	private FloatingActionButton floatingActionButton;
 	private CoordinatorLayout coordinatorLayout;
-    private List<NameList> namelists;
-	private CharSequence[] values = {"Carnes & Aves "," Frios "," Padaria "," Peixaria "," Rotisseria "};
+    private List<ProductsList> productsList;
+	private CharSequence[] values = {"Carnes & Aves","FLV","Frios","Padaria","Peixaria","Rotisseria"};
 	private AlertDialog alertDialog1;
 	
 	private static final String SHARED_PREFS = "sharedPrefs";
-    DatabaseReference databaseProducts;
+    private DatabaseReference databaseProducts;
 
 	private String spk;
     @Override
@@ -135,10 +135,10 @@ public class MainActivity extends AppCompatActivity
 
         editTextName = (EditText) findViewById(R.id.editTextName);
 		editTextCode = (EditText) findViewById(R.id.editTextCode);
-        listViewArtists = (ListView) findViewById(R.id.listViewArtists);
+        listViewProducts = (ListView) findViewById(R.id.listViewArtists);
 
 		floatingActionButton = (FloatingActionButton) findViewById(R.id.fab_add);
-        namelists = new ArrayList<>();
+        productsList = new ArrayList<>();
 
 		floatingActionButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -148,12 +148,12 @@ public class MainActivity extends AppCompatActivity
 				}
 			});
 
-        listViewArtists.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listViewProducts.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 				@Override
 				public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l)
 				{
-					NameList nmlist = namelists.get(i);
-					showUpdateDeleteDialog(nmlist.getKey(), nmlist.getName(), nmlist.getCode());
+					ProductsList proList = productsList.get(i);
+					showUpdateDeleteDialog(proList.getKey(), proList.getName(), proList.getCode());
 					return true;
 				}
 			});
@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity
 		AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.dialog_add, null);
+		dialogBuilder.setTitle(R.string.add_product);
         dialogBuilder.setView(dialogView);
 
         final EditText editTextName = dialogView.findViewById(R.id.editTextName);
@@ -201,60 +202,25 @@ public class MainActivity extends AppCompatActivity
 					if (!TextUtils.isEmpty(name))
 					{
 						String key = databaseProducts.push().getKey();
-						NameList artist = new NameList(key, name, code);
-
-						//Saving the Artist
-						databaseProducts.child(key).setValue(artist);
-
-						//setting edittext to blank again
+						ProductsList list = new ProductsList(key, name, code);
+						databaseProducts.child(key).setValue(list);
 						editTextName.setText("");
 						editTextCode.setText("");
-
-						//displaying a success toast
-						Toast.makeText(MainActivity.this, "Name added", Toast.LENGTH_LONG).show();
+						Toast.makeText(MainActivity.this, getString(R.string.added_item), Toast.LENGTH_LONG).show();
 						b.dismiss();
+					}
+					if (!TextUtils.isEmpty(code)) {
+						Toast.makeText(MainActivity.this, getString(R.string.please_enter_a_name), Toast.LENGTH_LONG).show();
 					}
 					else
 					{
-						//if the value is not given displaying a toast
-						Toast.makeText(MainActivity.this, "Please enter a name", Toast.LENGTH_LONG).show();
+						Toast.makeText(MainActivity.this, getString(R.string.please_enter_a_code), Toast.LENGTH_LONG).show();
 					}
 
 
 				}
 			});
 	}
-	/*
-	 private void addnamelist() {
-
-	 String name = editTextName.getText().toString().trim();
-	 String code = editTextCode.getText().toString().trim();
-
-	 //checking if the value is provided
-	 if (!TextUtils.isEmpty(name)) {
-
-	 //getting a unique id using push().getKey() method
-	 //it will create a unique id and we will use it as the Primary Key for our Artist
-	 String key = databaseArtists.push().getKey();
-
-	 //creating an Artist Object
-	 NameList artist = new NameList(key, name, code);
-
-	 //Saving the Artist
-	 databaseArtists.child(key).setValue(artist);
-
-	 //setting edittext to blank again
-	 editTextName.setText("");
-	 editTextCode.setText("");
-
-	 //displaying a success toast
-	 Toast.makeText(this, "Name added", Toast.LENGTH_LONG).show();
-	 } else {
-	 //if the value is not given displaying a toast
-	 Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
-	 }
-	 }
-	 */
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -292,6 +258,10 @@ public class MainActivity extends AppCompatActivity
 			startActivityForResult(new Intent(this, AboutActivity.class), SETTINGS_ACTION);
 
         }
+		if (id == R.id.select_section)
+		{
+			createAlertDialog();
+		}
         return super.onOptionsItemSelected(item);
     }
 
@@ -299,26 +269,19 @@ public class MainActivity extends AppCompatActivity
     protected void onStart()
 	{
         super.onStart();
-        //attaching value event listener
         databaseProducts.addValueEventListener(new ValueEventListener() {
 				@Override
 				public void onDataChange(DataSnapshot dataSnapshot)
 				{
-					//clearing the previous artist list
-					namelists.clear();
-
-					//iterating through all the nodes
+					productsList.clear();
 					for (DataSnapshot postSnapshot : dataSnapshot.getChildren())
 					{
-						//getting artist
-						NameList nmlist = postSnapshot.getValue(NameList.class);
-						//adding artist to the list
-						namelists.add(nmlist);
+						ProductsList proList = postSnapshot.getValue(ProductsList.class);
+						productsList.add(proList);
 					}
-
-					//creating adapter
-					ShowNameList myAdapter = new ShowNameList(MainActivity.this, namelists);
-					listViewArtists.setAdapter(myAdapter);
+					
+					ProductsView mAdapter = new ProductsView(MainActivity.this, productsList);
+					listViewProducts.setAdapter(mAdapter);
 				}
 
 				@Override
@@ -345,9 +308,12 @@ public class MainActivity extends AppCompatActivity
         final Button buttonUpdate = dialogView.findViewById(R.id.buttonUpdateArtist);
         final Button buttonDelete = dialogView.findViewById(R.id.buttonDeleteArtist);
 
-        dialogBuilder.setTitle(name);
+        dialogBuilder.setTitle(R.string.add_or_delete);
         final AlertDialog b = dialogBuilder.create();
         b.show();
+		
+		editTextName.setText(name);
+		editTextCode.setText(code);
 
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
@@ -358,7 +324,7 @@ public class MainActivity extends AppCompatActivity
 					String code = editTextCode.getText().toString().trim();
 					if (!TextUtils.isEmpty(name))
 					{
-						updateArtist(key, name, code);
+						updateProduct(key, name, code);
 						b.dismiss();
 					}
 				}
@@ -369,36 +335,28 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View view)
 				{
 
-					deleteArtist(key);
+					deleteProduct(key);
 					b.dismiss();
 				}
 			});
     }
 
 
-    private boolean updateArtist(String key, String name, String code)
+    private boolean updateProduct(String key, String name, String code)
 	{
-        //getting the specified artist reference
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference(spk).child(key);
-
-        //updating artist
-        NameList nmlist = new NameList(key, name, code);
-        dR.setValue(nmlist);
-        Toast.makeText(getApplicationContext(), "Name Updated", Toast.LENGTH_LONG).show();
+        DatabaseReference DR = FirebaseDatabase.getInstance().getReference(spk).child(key);
+        ProductsList proList = new ProductsList(key, name, code);
+        DR.setValue(proList);
+        Toast.makeText(getApplicationContext(), getString(R.string.updated_item), Toast.LENGTH_LONG).show();
         return true;
     }
 
 
-    private boolean deleteArtist(String id)
+    private boolean deleteProduct(String id)
 	{
-        //getting the specified artist reference
-        DatabaseReference dR = FirebaseDatabase.getInstance().getReference(spk).child(id);
-
-        //removing artist
-        dR.removeValue();
-
-        //removing all tracks
-        Toast.makeText(getApplicationContext(), "Name Deleted", Toast.LENGTH_LONG).show();
+        DatabaseReference DR = FirebaseDatabase.getInstance().getReference(spk).child(id);
+        DR.removeValue();
+        Toast.makeText(getApplicationContext(), getString(R.string.deleted_item), Toast.LENGTH_LONG).show();
 
         return true;
     }
@@ -406,7 +364,7 @@ public class MainActivity extends AppCompatActivity
 	public void createAlertDialog()
 	{
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(getString(R.string.choose_your_session));
+        builder.setTitle(getString(R.string.choose_your_section));
 		builder.setCancelable(false);
         builder.setSingleChoiceItems(values, -1, new DialogInterface.OnClickListener() {
 
@@ -423,27 +381,37 @@ public class MainActivity extends AppCompatActivity
 							editor.putString("FIREBASE_KEY", carnes_aves);
 							editor.apply();
 							break;
+							
 						case 1:
+							String flv = "flv";
+							editor.putString("FIREBASE_KEY", flv);
+							editor.apply();
+							break;
+							
+						case 2:
 							String frios = "frios";
 							editor.putString("FIREBASE_KEY", frios);
 							editor.apply();
-							
 							break;
-						case 2:
+							
+						case 3:
 							String padaria = "padaria";
 							editor.putString("FIREBASE_KEY", padaria);
 							editor.apply();
 							break;
-						case 3:
+							
+						case 4:
 							String peixaria = "peixaria";
 							editor.putString("FIREBASE_KEY", peixaria);
 							editor.apply();
 							break;
-						case 4:
+							
+						case 5:
 							String rotisseria = "rotisseria";
 							editor.putString("FIREBASE_KEY", rotisseria);
 							editor.apply();
 							break;
+							
 					}
 					alertDialog1.dismiss();
 					finish();

@@ -2,6 +2,20 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
+	signingConfigs {
+        release {
+            storeFile file('/storage/emulated/0/AppProjects/publish.keystore')
+            storePassword '499119'
+            keyAlias 'vanderclin'
+            keyPassword '499119'
+        }
+        debug {
+            storeFile file('/storage/emulated/0/AppProjects/publish.keystore')
+            storePassword '499119'
+            keyAlias 'vanderclin'
+            keyPassword '499119'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.0"
 

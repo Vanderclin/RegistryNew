@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- AlertDialog Style -->
-		
-	<style name="AlertDialog" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
-		<item name="android:textColor">?attr/itemColorLight</item>
-		<item name="android:textColorPrimary">?attr/itemColorLight</item>
-		<item name="android:textStyle">bold</item>
-		<item name="colorAccent">?attr/itemColorLight</item>
-	</style>
-
 	<!-- CardView Style -->
-
+		
 	<style name="CardViewStyle">
         <item name="cardBackgroundColor">?attr/cardBackground</item>
         <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
