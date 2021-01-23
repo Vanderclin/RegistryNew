@@ -15,5 +15,5 @@ class Constants {
 
     static final String TAG = "UpdateChecker";
 
-    static final String UPDATE_URL = "https://raw.githubusercontent.com/Vanderclin/RegistryNew/master/update/update.json?token=AIUOCHLUWPPFERNALPYVWPTABOIH6";
+    static final String UPDATE_URL = "https://raw.githubusercontent.com/Vanderclin/RegistryNew/master/update/update.json";
 }
