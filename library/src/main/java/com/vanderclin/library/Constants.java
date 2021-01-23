@@ -9,12 +9,11 @@ class Constants {
     static final String APK_UPDATE_CONTENT = "updateMessage";
     static final String APK_VERSION_CODE = "versionCode";
 
-
     static final int TYPE_NOTIFICATION = 2;
 
     static final int TYPE_DIALOG = 1;
 
     static final String TAG = "UpdateChecker";
 
-    static final String UPDATE_URL = "http://192.168.0.11:12345/update.json";
+    static final String UPDATE_URL = "https://raw.githubusercontent.com/Vanderclin/RegistryNew/master/update/update.json?token=AIUOCHLUWPPFERNALPYVWPTABOIH6";
 }

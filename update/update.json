@@ -1,5 +1,5 @@
 {
    "url": "http://192.168.0.11:12345/app-release.apk",
    "versionCode": 30,
-   "updateMessage": "Informações adicionais\s\nIsso é  teste"
+   "updateMessage": "Github Test Pass"
 }
