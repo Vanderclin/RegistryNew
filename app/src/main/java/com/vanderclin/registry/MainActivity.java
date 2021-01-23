@@ -13,6 +13,9 @@ import com.google.firebase.database.*;
 import com.vanderclin.registry.*;
 import java.util.*;
 
+import com.vanderclin.library.AppUtils;
+import com.vanderclin.library.UpdateChecker;
+
 import com.vanderclin.registry.R;
 
 public class MainActivity extends AppCompatActivity
@@ -166,6 +169,7 @@ public class MainActivity extends AppCompatActivity
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         if (netInfo != null && netInfo.isConnectedOrConnecting())
 		{
+			checkUpdate();
         }
 		else
 		{
@@ -422,5 +426,9 @@ public class MainActivity extends AppCompatActivity
         alertDialog1.show();
 
     }
+	
+	private void checkUpdate() {
+		UpdateChecker.checkForDialog(MainActivity.this);
+	}
 
 }
