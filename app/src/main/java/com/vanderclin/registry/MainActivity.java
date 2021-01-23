@@ -429,6 +429,7 @@ public class MainActivity extends AppCompatActivity
 	
 	private void checkUpdate() {
 		UpdateChecker.checkForDialog(MainActivity.this);
+		UpdateChecker.checkForNotification(MainActivity.this);
 	}
 
 }

@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class ApkUtils {
 
-
     public static void installAPk(Context context, File apkFile) {
 
         Intent installAPKIntent = getApkInStallIntent(context, apkFile);
